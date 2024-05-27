@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> <!-- Define o idioma da página como português do Brasil -->
+<head>
+    <meta charset="UTF-8"> <!-- Define a codificação de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz a página ser responsiva -->
+    <style>
+        * {
+            margin: 0; /* Remove margens padrão de todos os elementos */
+            padding: 0; /* Remove preenchimento padrão de todos os elementos */
+            font-family: "Reddit Mono", monospace; /* Define a fonte de todo o site */
+            box-sizing: border-box; /* Inclui as bordas e o preenchimento no tamanho total do elemento */
+            font-weight: 600; /* Define a espessura da fonte para 600 (semi-negrito) */
+        }
+        body {
+            display: flex; /* Utiliza Flexbox para a disposição dos elementos */
+            height: 100vh; /* Define a altura do body como 100% da altura da janela */
+            justify-content: center; /* Centraliza os itens horizontalmente */
+            background-color: #8a2be2; /* Define a cor de fundo do body */
+            align-items: center; /* Centraliza os itens verticalmente */
+            padding: 20px; /* Adiciona preenchimento ao body para melhorar a responsividade */
+        }
+        form {
+            background-color: white; /* Define a cor de fundo do formulário como branco */
+            padding: 30px; /* Define o preenchimento interno do formulário */
+            border-radius: 24px; /* Arredonda os cantos do formulário */
+            display: grid; /* Utiliza grid layout para o formulário */
+            gap: 10px; /* Define um espaçamento entre os elementos do grid */
+            max-width: 500px; /* Define a largura máxima do formulário */
+            width: 100%; /* Define a largura do formulário como 100% do elemento pai */
+        }
+
+        form input[type="text"], 
+        form input[type="email"], 
+        form input[type="date"], 
+        form button { 
+            width: 100%; /* Define a largura dos campos como 100% do elemento pai */
+            padding: 10px; /* Define o preenchimento interno dos campos */
+            border-radius: 10px; /* Arredonda os cantos dos campos */
+            border: 0.1px solid rgb(189, 189, 189); /* Define uma borda */
+            outline: none; /* Remove a borda de foco padrão */
+        }
+
+        form input[type="text"]:hover, 
+        form input[type="email"]:hover, 
+        form input[type="date"]:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao passar o mouse */
+            transition: box-shadow 0.2s ease-in-out; /* Transição suave para a sombra */
+        }
+
+        form button {
+            font-size: 22px; /* Define o tamanho da fonte do botão */
+            background-color: #892be2; /* Define a cor de fundo do botão */
+            cursor: pointer; /* Muda o cursor para um ponteiro ao passar sobre o botão */
+            transition: background-color 0.2s ease-in-out; /* Transição suave para a cor de fundo */
+        }
+
+        form button:hover {
+            background-color: #8000ff; /* Define a cor de fundo do botão ao passar o mouse */
+        }
+        
+        .sexo label {
+            display: flex; /* Utiliza Flexbox para a disposição dos labels de sexo */
+            gap: 10px; /* Define um espaçamento entre os labels */
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px; /* Ajusta o preenchimento do body para dispositivos menores */
+            }
+            form {
+                padding: 20px; /* Ajusta o preenchimento interno do formulário para dispositivos menores */
+            }
+            form button {
+                font-size: 18px; /* Ajusta o tamanho da fonte do botão para dispositivos menores */
+            }
+        }
+    </style>
+    <title>Formulario</title> <!-- Define o título da página -->
+</head>
+<body>
+    <main>
+        <form>
+            <h1>Cadastre-se</h1> <!-- Título do formulário -->
+
+            <!-- Campo para o nome -->
+            <div class="nome">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" placeholder="Joao Teste" required>
+            </div>
+
+            <!-- Campo para o nome de usuário -->
+            <div class="usuario">
+                <label for="nome-usuario">Nome de Usuário:</label>
+                <input type="text" name="nomeUsuario" id="nome-usuario" placeholder="@joaoteste" required>
+            </div>
+
+            <!-- Campo para o email -->
+            <div class="email">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="joaoteste@gmail.com" required>
+            </div>
+
+            <!-- Campo para o CPF -->
+            <div class="cpf">
+                <label for="cpf">CPF:</label>
+                <input type="text" name="cpf" id="cpf" placeholder="999.999.999-99" required>
+            </div>
+
+            <!-- Campo para a data de nascimento -->
+            <div class="nascimento">
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" name="dataNascimento" id="dataNascimento" required>
+            </div>
+
+            <!-- Campo para selecionar o sexo -->
+            <div class="sexo">
+                <label>Sexo:</label>
+                <label for="masculino">
+                    <input type="radio" name="sexo" id="masculino" value="Masculino" required> Masculino
+                </label>
+                <label for="feminino">
+                    <input type="radio" name="sexo" id="feminino" value="Feminino" required> Feminino
+                </label>
+                <label for="na">
+                    <input type="radio" name="sexo" id="na" value="na" required> Prefiro não informar
+                </label>
+            </div>
+
+            <!-- Botão de submissão -->
+            <button type="submit">Cadastrar</button>
+        </form>
+    </main>
+</body>
+</html>
